@@ -42,6 +42,12 @@ io.on('connection', (socket) => {
 
 const PORT = process.env.PORT || 4000;
 
-httpServer.listen(PORT, () => {
+// Add a simple health check route for Railway to verify it's up
+app.get('/', (req, res) => {
+    res.send('Cafe LA Backend API is running!');
+});
+
+// Explicitly bind to 0.0.0.0 for Railway / Docker environments
+httpServer.listen(Number(PORT), '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
 });
