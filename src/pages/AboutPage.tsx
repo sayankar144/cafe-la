@@ -1,7 +1,7 @@
 import SectionReveal from "@/components/SectionReveal";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import heroCafe from "@/assets/hero-cafe.jpg";
+import gallery1 from "@/assets/gallery/gallery-1.jpg";
+import gallery2 from "@/assets/gallery/gallery-2.jpg";
+import heroCafe from "@/assets/menu/hero-cafe.jpg";
 
 export default function AboutPage() {
   return (
@@ -17,7 +17,7 @@ export default function AboutPage() {
             <div>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">Born from a Love of Coffee</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Cafe LA started with a simple dream — to create a space where the best coffee, thoughtfully prepared food, and genuine community come together. Founded in 2020, we set out to reimagine the café experience for Los Angeles.
+                Cafe LA started with a simple dream — to create a space where the best coffee, thoughtfully prepared food, and genuine community come together. Founded in 2020, we set out to reimagine the café experience for Kalyani.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Every cup we serve is a testament to the relationships we've built with local roasters, farmers, and artisans. Our beans are ethically sourced, our pastries baked fresh daily, and our recipes crafted with love.

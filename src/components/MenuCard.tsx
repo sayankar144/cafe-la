@@ -29,9 +29,9 @@ export default function MenuCard({ item }: { item: MenuItem }) {
       <div className="p-5">
         <div className="flex items-start justify-between gap-2 mb-2">
           <h3 className="font-heading text-lg font-semibold text-foreground">{item.name}</h3>
-          <span className="font-heading text-lg font-bold text-accent whitespace-nowrap">${item.price.toFixed(2)}</span>
+          <span className="font-heading text-lg font-bold text-accent whitespace-nowrap">₹{item.price}</span>
         </div>
-        <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{item.description}</p>
+        {item.description && <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{item.description}</p>}
         <Button
           onClick={() => addItem(item)}
           className="w-full rounded-full bg-primary text-primary-foreground hover:bg-accent gap-2"

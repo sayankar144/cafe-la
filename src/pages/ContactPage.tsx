@@ -24,10 +24,10 @@ export default function ContactPage() {
             <div>
               <div className="space-y-6 mb-10">
                 {[
-                  { icon: MapPin, label: "Address", value: "123 Coffee Lane, Los Angeles, CA 90001" },
-                  { icon: Phone, label: "Phone", value: "(213) 555-0142" },
+                  { icon: MapPin, label: "Address", value: "Cafe LA, B-9/83, Block B, Kalyani, West Bengal 741235" },
+                  { icon: Phone, label: "Phone", value: "06291162431" },
                   { icon: Mail, label: "Email", value: "hello@cafela.com" },
-                  { icon: Clock, label: "Hours", value: "Mon–Fri: 7AM–10PM | Sat–Sun: 8AM–11PM" },
+                  { icon: Clock, label: "Hours", value: "All Days: 10:00 AM – 10:30 PM" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">

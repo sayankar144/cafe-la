@@ -1,11 +1,50 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import MenuCard from "@/components/MenuCard";
-import { menuItems, categories } from "@/lib/menu-data";
+import { categories, MenuItem } from "@/lib/menu-data";
+import api from "@/lib/api";
+import { Loader2 } from "lucide-react";
 
 export default function MenuPage() {
   const [active, setActive] = useState("All");
-  const filtered = active === "All" ? menuItems : menuItems.filter((i) => i.category === active);
+  const [items, setItems] = useState<MenuItem[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchMenu = async () => {
+      try {
+        const res = await api.get('/menu');
+        if (res.data && res.data.length > 0) {
+            // Map the DB schema to the frontend structure
+            const formatted = res.data.map((item: any) => ({
+                id: item.id,
+                name: item.name,
+                description: item.description || undefined,
+                price: parseFloat(item.price),
+                image: item.imageUrl,
+                category: item.category,
+                tags: [] // Can add tags to DB later if needed
+            }));
+            setItems(formatted);
+        }
+      } catch (err) {
+        console.error("Failed to load menu items", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchMenu();
+  }, []);
+
+  const filtered = active === "All" ? items : items.filter((i) => i.category === active);
+
+  if (loading) {
+    return (
+        <div className="pt-24 min-h-screen bg-background flex justify-center items-center">
+            <Loader2 className="w-8 h-8 animate-spin text-coffee-primary" />
+        </div>
+    );
+  }
 
   return (
     <div className="pt-20 min-h-screen bg-background">

@@ -3,16 +3,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import SectionReveal from "@/components/SectionReveal";
 
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import heroCafe from "@/assets/hero-cafe.jpg";
-import coffee from "@/assets/coffee-latte.jpg";
-import burger from "@/assets/burger.jpg";
-import dessert from "@/assets/dessert.jpg";
+import gallery1 from "@/assets/gallery/gallery-1.jpg";
+import gallery2 from "@/assets/gallery/gallery-2.jpg";
+import gallery3 from "@/assets/gallery/gallery-3.jpg";
+import gallery4 from "@/assets/gallery/gallery-4.jpg";
+import gallery5 from "@/assets/gallery/gallery-5.jpg";
+import gallery6 from "@/assets/gallery/gallery-6.webp";
+import gallery7 from "@/assets/gallery/gallery-7.webp";
+import heroCafe from "@/assets/menu/hero-cafe.jpg";
+import coffee from "@/assets/menu/coffee-latte.jpg";
+import burger from "@/assets/menu/burger.jpg";
+import dessert from "@/assets/menu/dessert.jpg";
 
-const images = [gallery1, gallery2, gallery3, gallery4, heroCafe, coffee, burger, dessert];
+const images = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7, heroCafe, coffee, burger, dessert];
 
 export default function GalleryPage() {
   const [selected, setSelected] = useState<string | null>(null);

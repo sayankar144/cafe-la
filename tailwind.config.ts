@@ -16,8 +16,15 @@ export default {
       fontFamily: {
         heading: ['Playfair Display', 'serif'],
         body: ['Inter', 'sans-serif'],
+        script: ['Dancing Script', 'cursive'],
       },
       colors: {
+        coffee: {
+          bg: "#EAD9C8",
+          primary: "#6B3E26",
+          beige: "#F5E9DD",
+          button: "#7B4B2A",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -90,11 +97,16 @@ export default {
           from: { opacity: "0", transform: "translateY(30px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "marquee": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - 1.5rem))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 0.6s ease-out forwards",
+        "marquee": "marquee 40s linear infinite",
       },
     },
   },
